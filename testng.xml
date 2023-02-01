@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/importWallet.java">
+        <classes>
+            <class name="AnCrypto.importWallet">
+                <methods>
+                    <include name="CLickImportYourWallet"/>
+                    <include name="NameYourWallet"/>
+                    <include name="EnterSecretCode"/>
+                    <include name="SetPinAndConfirmPin"/>
+                    <include name="GotoBrowserAndWaitFor2Sec"/>
+                    <include name="GotoChatAndWaitFor2Sec"/>
+                    <include name="GotoTradeAndWaitFor2Sec"/>
+                    <include name="GotoWalletAndWaitFor2Sec"/>
+                    <include name="GotoSendAndWaitFor2Sec"/>
+                    <include name="GotoReceiveAndWaitFor2Sec"/>
+                    <include name="GotoBuyAndWaitFor2Sec"/>
+                    <include name="GotoManageAndWaitFor2Sec"/>
+                    <include name="GotoCollectiblesAndWaitFor2Sec"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/Chat.java">
+        <classes>
+            <class name="AnCrypto.Chat">
+                <methods>
+                    <include name="openChatScreen"/>
+                    <include name="ClickOnSearchField"/>
+                    <include name="openOneUser"/>
+                    <include name="Type_a_message"/>
+                    <include name="ClickOnSendButton"/>
+                    <include name="GetSendReceiveOptionsInChatScreen"/>
+                    <include name="ClickOnRequestCrypto"/>
+                    <include name="SearchAnyCurrency"/>
+                    <include name="SelectThatCurrency"/>
+                    <include name="EnterAmountToRequest"/>
+                    <include name="ClickOnRequestForSelectedCrypto"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/SettingsScreen.java">
+        <classes>
+            <class name="AnCrypto.SettingsScreen">
+                <methods>
+                    <include name="OpenSettingsScreen"/>
+                    <include name="OpenAllOptions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
