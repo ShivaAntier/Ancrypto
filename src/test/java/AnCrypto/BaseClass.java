@@ -12,14 +12,14 @@ public class BaseClass {
     public static AppiumDriver driver;
     public static DesiredCapabilities cap;
 
-//    @Test
+    @Test
     public void openApp() throws MalformedURLException, InterruptedException {
         BaseClass bc = new BaseClass();
         cap = new DesiredCapabilities();
         cap.setCapability("automationName", "Appium");
 //        cap.setCapability("automationName", "Appium");
-        cap.setCapability("VERSION", "11.0");
-        cap.setCapability("deviceName", "Android SDK built for x86");//moto e(7) plus
+        cap.setCapability("VERSION", "12.0");
+        cap.setCapability("deviceName", "realme RMX3381");//moto e(7) plus  Android SDK built for x86 N7I7UCAUOZ5T499P
         cap.setCapability("platformName", "Android");
         cap.setCapability("adbExecTimeout", "80000");
         cap.setCapability("appPackage", "com.ancryptoWallet");
