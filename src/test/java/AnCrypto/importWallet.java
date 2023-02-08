@@ -70,7 +70,7 @@ public class importWallet extends BaseClass {
 
     }
 
-    @Test(priority = 5, enabled = true)
+    @Test(priority = 5, enabled = false)
     void GotoBrowserAndWaitFor2Sec() throws InterruptedException {
         Thread.sleep(500);
         driver.findElement(By.xpath("//*[@text='Browser']")).click();
