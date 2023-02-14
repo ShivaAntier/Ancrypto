@@ -12,7 +12,7 @@ public class BaseClass {
     public static AppiumDriver driver;
     public static DesiredCapabilities cap;
 
-//    @Test
+    @Test
     public void openApp() throws MalformedURLException, InterruptedException {
         BaseClass bc = new BaseClass();
         cap = new DesiredCapabilities();
