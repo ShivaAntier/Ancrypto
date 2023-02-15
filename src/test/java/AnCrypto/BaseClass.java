@@ -12,7 +12,9 @@ public class BaseClass {
     public static AppiumDriver driver;
     public static DesiredCapabilities cap;
 
-    @Test
+    String key = "search mesh kangaroo song rubber gravity video rifle farm pelican burst stick", walletName = "tester", userName = "tester_001";
+
+    //    @Test
     public void openApp() throws MalformedURLException, InterruptedException {
         BaseClass bc = new BaseClass();
         cap = new DesiredCapabilities();
