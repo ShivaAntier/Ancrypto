@@ -2,21 +2,32 @@ package AnCrypto;
 
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import AnCrypto.PageObjects.onboardingScreenLocators;
+import AnCrypto.PageObjects.createNewWalletScreenLocators;
 
 import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class importWallet extends BaseClass {
-    String key = "search mesh kangaroo song rubber gravity video rifle farm pelican burst stick", walletName = "tester", userName = "tester_001";
 
-    @Test(priority = 1, enabled = true)
-    public void CLickImportYourWallet() throws InterruptedException, MalformedURLException {
+    onboardingScreenLocators onboardingScreenLocatorsObject = new onboardingScreenLocators();
+    createNewWalletScreenLocators createNewWalletScreenLocatorsObject = new createNewWalletScreenLocators();
+    @BeforeMethod
+    public void testSetup() throws MalformedURLException, InterruptedException {
         super.openApp();
-        //Click on Trades option on footer
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-        driver.findElement(By.xpath("//*[@text='Import your wallet']")).click();
-        Thread.sleep(2000);
+    }
+
+    @AfterMethod
+    public void testCleanup(){
+        driver.quit();
+    }
+    @Test
+    public void CLickImportYourWallet() {
+        onboardingScreenLocatorsObject.createNewWalletButton().click();
+        Assert.assertEquals(createNewWalletScreenLocatorsObject.nameYourWalletText().getText(), "Name your wallet");
     }
 
     @Test(priority = 2, enabled = true)
