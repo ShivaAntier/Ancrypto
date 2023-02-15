@@ -43,7 +43,6 @@ public class SettingsScreen extends BaseClass {
     @Test(priority = 3,enabled = true)
     void OpenProfileScreen(){
         driver.findElement(By.xpath("//*[@class='android.widget.ScrollView']/android.view.ViewGroup/android.view.ViewGroup[1]")).click();
-        
     }
 
 }
