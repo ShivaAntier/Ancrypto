@@ -44,7 +44,6 @@ public class importWallet extends BaseClass {
             }
             importWalletScreenLocatorsObject.nextButton().click();
             for (int i = 1; i < 5; i++) {
-                wait = new WebDriverWait(driver, 60);
                 Thread.sleep(500);
                 importWalletScreenLocatorsObject.pinDigitText1().click();
             }
