@@ -1,6 +1,6 @@
 package AnCrypto.PageObjects;
 
-import AnCrypto.BaseClass;
+import AnCrypto.Helpers.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
