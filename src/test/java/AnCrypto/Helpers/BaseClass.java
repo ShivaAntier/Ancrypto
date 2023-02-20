@@ -1,8 +1,7 @@
-package AnCrypto;
+package AnCrypto.Helpers;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -12,7 +11,9 @@ public class BaseClass {
     public static AppiumDriver driver;
     public static DesiredCapabilities cap;
 
-    String key = "search mesh kangaroo song rubber gravity video rifle farm pelican burst stick", walletName = "tester", userName = "tester_001";
+    public String key = "search mesh kangaroo song rubber gravity video rifle farm pelican burst stick";
+    public String walletName = "tester";
+    String userName = "tester_001";
 
     //    @Test
     public void openApp() throws MalformedURLException, InterruptedException {

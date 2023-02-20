@@ -1,5 +1,6 @@
 package AnCrypto;
 
+import AnCrypto.Helpers.BaseClass;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 

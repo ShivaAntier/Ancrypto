@@ -1,15 +1,10 @@
 package AnCrypto.PageObjects;
 
-import AnCrypto.BaseClass;
+import AnCrypto.Helpers.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class importWalletScreenLocators extends BaseClass {
-    public WebElement nameYourWalletText() {
-        WebElement nameYourWalletText = driver.findElement(By.xpath("//*[@text='Name your wallet']"));
-        return nameYourWalletText;
-    }
-
     public WebElement enterWalletNameTextField() {
         WebElement enterWalletNameTextField = driver.findElement(By.xpath("//*[@text='Enter wallet name']"));
         return enterWalletNameTextField;
@@ -18,11 +13,6 @@ public class importWalletScreenLocators extends BaseClass {
     public WebElement nextButton(){
         WebElement nextButton = driver.findElement(By.xpath("//*[@text='Next']"));
         return nextButton;
-    }
-
-    public WebElement importWalletUsingMnemonicsText(){
-        WebElement importWalletUsingMnemonicsText = driver.findElement(By.xpath("//*[@text='Import Wallet using Mnemonics']"));
-        return importWalletUsingMnemonicsText;
     }
 
     public WebElement enterRecoveryPhraseHereText(){
