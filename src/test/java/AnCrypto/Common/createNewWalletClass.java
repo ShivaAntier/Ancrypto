@@ -37,6 +37,7 @@ public class createNewWalletClass extends BaseClass {
     }
     public void createNewWalletFunction() throws IOException, InterruptedException, UnsupportedFlavorException {
         super.openApp();
+//        Thread.sleep(5000);
         onboardingScreenLocatorsObject.createNewWalletButton().click();
         getSaltString();
         createNewWalletScreenLocatorsObject.enterWalletNameTextField().sendKeys(userName);
