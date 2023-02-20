@@ -2,7 +2,6 @@ package AnCryptoWeb.PageObject;
 
 import AnCryptoWeb.Helper.BaseClass;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class aboutUsScreenLocators extends BaseClass {

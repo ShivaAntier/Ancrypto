@@ -7,6 +7,8 @@ import AnCryptoWeb.PageObject.mediaScreenLocators;
 import AnCryptoWeb.Helper.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -55,8 +57,11 @@ public class homeScreenLevel1 extends BaseClass {
     void checkIfAboutUsScreenIsOpeningSuccessfully() throws InterruptedException {
         Thread.sleep(2000);
         hs.aboutUs().click();
+        WebDriverWait wait = new WebDriverWait(driver,20);
+        String b = "We Believe";
+        wait.until(ExpectedConditions.textToBePresentInElement(as.weBelieve(),b));
         String a = as.weBelieve().getText();
-        Assert.assertEquals(a, "We Believe");
+        Assert.assertEquals(a, b);
     }
 
     @Test
@@ -166,5 +171,31 @@ public class homeScreenLevel1 extends BaseClass {
         String a = hs.appStorePopUpText().getText();
         takeSnapShot(driver, "src/test/java/AnCryptoWeb/Images/HomeScreen/HomeScreen1.jpg");
         Assert.assertEquals(a, "App is Coming Soon!");
+    }
+
+    @Test
+    void fifthPlayStoreButton() throws Exception {
+        Thread.sleep(1000);
+        hs.fifthPlayStoreButton().click();
+        ArrayList<String> arr = new ArrayList(driver.getWindowHandles());
+        driver.switchTo().window(arr.get(1));
+        String a = driver.getCurrentUrl();
+        Assert.assertEquals(a, "https://play.google.com/store/apps/details?id=com.ancryptoWallet");
+        String b = driver.findElement(By.xpath("//span[text()='AnCrypto Wallet']")).getText();
+        takeSnapShot(driver, "src/test/java/AnCryptoWeb/Images/HomeScreen/HomeScreen1.jpg");
+        Assert.assertEquals(b, "AnCrypto Wallet");
+    }
+
+    @Test
+    void fifthAppStoreButton() throws Exception {
+        Thread.sleep(1000);
+        hs.fifthAppStoreButton().click();
+        String a = hs.appStorePopUpText().getText();
+        takeSnapShot(driver, "src/test/java/AnCryptoWeb/Images/HomeScreen/HomeScreen1.jpg");
+        Assert.assertEquals(a, "App is Coming Soon!");
+    }
+    @Test void checkSecondHalfFirstText(){
+        String a = hs.secondHalfFirstText().getText(), b= "Send Crypto Money While You Chat";
+        Assert.assertEquals(a,b);
     }
 }

@@ -80,4 +80,19 @@ public class homeScreenLocators extends BaseClass {
         WebElement forthAppStoreButton = driver.findElement(By.xpath("//a[@class='et_pb_button et_pb_button_8 btn_new1 et_pb_bg_layout_light']"));
         return forthAppStoreButton;
     }
+
+    public WebElement fifthPlayStoreButton() {
+        WebElement fifthPlayStoreButton = driver.findElement(By.xpath("//a[@class='et_pb_button et_pb_button_9 btn_new1 et_pb_bg_layout_light']"));
+        return fifthPlayStoreButton;
+    }
+
+    public WebElement fifthAppStoreButton() {
+        WebElement fifthAppStoreButton = driver.findElement(By.xpath("//a[@class='et_pb_button et_pb_button_10 btn_new1 et_pb_bg_layout_light']"));
+        return fifthAppStoreButton;
+    }
+
+    public WebElement secondHalfFirstText(){
+        WebElement a = driver.findElement(By.xpath("//h3[text()=\"Send Crypto Money While You Chat\"]"));
+        return  a;
+    }
 }

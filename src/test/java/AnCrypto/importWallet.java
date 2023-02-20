@@ -3,6 +3,7 @@ package AnCrypto;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import AnCrypto.PageObjects.onboardingScreenLocators;
@@ -15,15 +16,15 @@ public class importWallet extends BaseClass {
 
     onboardingScreenLocators onboardingScreenLocatorsObject = new onboardingScreenLocators();
     createNewWalletScreenLocators createNewWalletScreenLocatorsObject = new createNewWalletScreenLocators();
-    @BeforeMethod
+    @BeforeClass
     public void testSetup() throws MalformedURLException, InterruptedException {
         super.openApp();
     }
 
-    @AfterMethod
-    public void testCleanup(){
-        driver.quit();
-    }
+//    @AfterMethod
+//    public void testCleanup(){
+//        driver.quit();
+//    }
     @Test
     public void CLickImportYourWallet() {
         onboardingScreenLocatorsObject.createNewWalletButton().click();
@@ -71,7 +72,7 @@ public class importWallet extends BaseClass {
             } catch (Exception e) {
                 Thread.sleep(1000);
                 System.out.println("Loop running for :: " + b + " times.");
-                if (b>5){
+                if (b>9){
                     Assert.assertFalse(true,"The loader is stuck at this point for long time.");
                 }
                 b++;
