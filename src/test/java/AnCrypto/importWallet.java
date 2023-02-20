@@ -1,42 +1,70 @@
 package AnCrypto;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import AnCrypto.PageObjects.onboardingScreenLocators;
 import AnCrypto.PageObjects.createNewWalletScreenLocators;
+import AnCrypto.PageObjects.importWalletScreenLocators;
 
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 public class importWallet extends BaseClass {
 
+    WebDriverWait wait;
     onboardingScreenLocators onboardingScreenLocatorsObject = new onboardingScreenLocators();
     createNewWalletScreenLocators createNewWalletScreenLocatorsObject = new createNewWalletScreenLocators();
-    @BeforeClass
+    importWalletScreenLocators importWalletScreenLocatorsObject = new importWalletScreenLocators();
+    @BeforeMethod
     public void testSetup() throws MalformedURLException, InterruptedException {
         super.openApp();
     }
 
-//    @AfterMethod
-//    public void testCleanup(){
-//        driver.quit();
-//    }
+    @AfterMethod
+    public void testCleanup(){
+        driver.quit();
+    }
     @Test
-    public void CLickImportYourWallet() {
-        onboardingScreenLocatorsObject.createNewWalletButton().click();
-        Assert.assertEquals(createNewWalletScreenLocatorsObject.nameYourWalletText().getText(), "Name your wallet");
+    public void ImportWallet() throws InterruptedException {
+        onboardingScreenLocatorsObject.importYourWalletButton().click();
+        importWalletScreenLocatorsObject.enterWalletNameTextField().sendKeys(walletName);
+        importWalletScreenLocatorsObject.nextButton().click();
+        importWalletScreenLocatorsObject.enterRecoveryPhraseHereText().sendKeys(key);
+        importWalletScreenLocatorsObject.nextButton().click();
+
+        try{
+            for (int i = 1; i < 5; i++) {
+                wait = new WebDriverWait(driver, 60);
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@text='1']")));
+                importWalletScreenLocatorsObject.pinDigitText1().click();
+            }
+            importWalletScreenLocatorsObject.nextButton().click();
+            for (int i = 1; i < 5; i++) {
+                Thread.sleep(500);
+                importWalletScreenLocatorsObject.pinDigitText1().click();
+            }
+            Thread.sleep(1000);
+            importWalletScreenLocatorsObject.noButton().click();
+            Assert.assertEquals(driver.findElement(By.xpath("//*[@class = 'android.widget.TextView' and @index = '1' and @text = 'Wallet']")).getText(), "Wallet");
+        }
+        catch (Exception e){
+            System.out.println("Message " + e.getMessage());
+            System.out.println("Cause " + e.getCause());
+            e.printStackTrace();
+        }
+
     }
 
-    @Test(priority = 2, enabled = true)
-    public void NameYourWallet() throws InterruptedException, MalformedURLException {
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//*[@text='Enter wallet name']")).sendKeys(walletName);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@text='Next']")).click();
+    @Test()
+    public void NameYourWallet() {
+        onboardingScreenLocatorsObject.importYourWalletButton().click();
+        importWalletScreenLocatorsObject.enterWalletNameTextField().sendKeys(walletName);
+        importWalletScreenLocatorsObject.nextButton().click();
+        Assert.assertEquals(importWalletScreenLocatorsObject.importWalletUsingMnemonicsText().getText(), "Import Wallet using Mnemonics");
     }
 
     @Test(priority = 3, enabled = true)
@@ -48,8 +76,13 @@ public class importWallet extends BaseClass {
 
     }
 
-    @Test(priority = 4, enabled = true)
+    @Test()
     void SetPinAndConfirmPin() throws InterruptedException {
+        onboardingScreenLocatorsObject.importYourWalletButton().click();
+        importWalletScreenLocatorsObject.enterWalletNameTextField().sendKeys(walletName);
+        importWalletScreenLocatorsObject.nextButton().click();
+        importWalletScreenLocatorsObject.enterRecoveryPhraseHereText().sendKeys(key);
+        importWalletScreenLocatorsObject.nextButton().click();
         boolean a = true;
         int b = 1;
         while (a) {
@@ -72,7 +105,7 @@ public class importWallet extends BaseClass {
             } catch (Exception e) {
                 Thread.sleep(1000);
                 System.out.println("Loop running for :: " + b + " times.");
-                if (b>9){
+                if (b>5){
                     Assert.assertFalse(true,"The loader is stuck at this point for long time.");
                 }
                 b++;
