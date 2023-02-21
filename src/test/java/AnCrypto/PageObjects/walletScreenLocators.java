@@ -37,5 +37,34 @@ public class walletScreenLocators extends BaseClass {
         WebElement okButton = driver.findElement(By.xpath("//*[@text='Ok']"));
         return okButton;
     }
+    public WebElement maxOption() {
+        WebElement maxOption = driver.findElement(By.xpath("//*[@text='Max']"));
+        return maxOption;
+    }
+    public WebElement amountTextField(){
+        WebElement amountTextField = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.EditText"));
+        return  amountTextField;
+    }
+    public WebElement slowText(){
+        WebElement slowText = driver.findElement(By.xpath("//*[@text='Slow']"));
+        return  slowText;
+    }
+    public WebElement averageText(){
+        WebElement averageText = driver.findElement(By.xpath("//*[@text='Average']"));
+        return  averageText;
+    }
+    public WebElement fastText(){
+        WebElement fastText = driver.findElement(By.xpath("//*[@text='Fast']"));
+        return  fastText;
+    }
+    public WebElement enterAddressTextField(){
+        WebElement enterAddressTextField =  driver.findElement(By.xpath("//*[@text='Enter Address']"));
+        return enterAddressTextField;
+    }
+    public WebElement sendButton(){
+        WebElement sendButton =  driver.findElement(By.xpath("//*[@text='Send']"));
+        return sendButton;
+    }
+
 
 }

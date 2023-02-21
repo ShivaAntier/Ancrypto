@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wallet Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/Tests.walletScreenTests/walletScreenTestCases.java">
+        <classes>
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCases">
+                <methods>
+                    <include name="walletScreenTestsCheckAddressContactHomeButton"/>
+                    <include name="walletScreenTestsCheckSendCurrencyAdvancedOptionsSubmitEmpty"/>
+                    <include name="walletScreenTestsCheckSendCurrencyMaxAmount"/>
+                    <include name="walletScreenTestsCheckSendCurrencyClickSlowAverageFastOptions"/>
+                    <include name="walletScreenTestsCheckSendCurrencyEnterInvalidAddressAndAndValidAmountClickSend"/>
+                    <include name="walletScreenTestsCheckSendCurrencyEnterValidAddressAndInvalidAmountAndClickSend"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
