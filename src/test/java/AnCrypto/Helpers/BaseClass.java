@@ -11,7 +11,7 @@ public class BaseClass {
     public static AppiumDriver driver;
     public static DesiredCapabilities cap;
 
-    public String key = "search mesh kangaroo song rubber gravity video rifle farm pelican burst stick";
+    public String key = "wide truly test valley bike accident law gentle dinosaur mind jar budget";
     public String walletName = "tester";
     String userName = "tester_001";
 
@@ -27,6 +27,7 @@ public class BaseClass {
         cap.setCapability("adbExecTimeout", "80000");
         cap.setCapability("appPackage", "com.ancryptoWallet");
         cap.setCapability("appActivity", "com.ancrypto.MainActivity");
+        cap.setCapability("noReset","true");
 //        cap.setCapability("appPackage","com.evoeurope");
 //        cap.setCapability("appActivity","com.coincult.MainActivity");
         cap.setCapability("autoGrantPermissions", "true");
