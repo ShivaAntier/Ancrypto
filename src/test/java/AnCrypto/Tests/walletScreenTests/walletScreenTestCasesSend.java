@@ -8,7 +8,7 @@ import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 
-public class walletScreenTestCases extends BaseClass {
+public class walletScreenTestCasesSend extends BaseClass {
     walletScreenLocators walletScreenLocatorsObject = new walletScreenLocators();
     @BeforeMethod
     public void testSetup() throws MalformedURLException, InterruptedException {

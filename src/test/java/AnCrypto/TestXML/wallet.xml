@@ -4,7 +4,7 @@
     <test verbose="2" preserve-order="true"
           name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/Tests.walletScreenTests/walletScreenTestCases.java">
         <classes>
-            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCases">
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend">
                 <methods>
                     <include name="walletScreenTestsCheckAddressContactHomeButton"/>
                     <include name="walletScreenTestsCheckSendCurrencyAdvancedOptionsSubmitEmpty"/>
@@ -12,6 +12,17 @@
                     <include name="walletScreenTestsCheckSendCurrencyClickSlowAverageFastOptions"/>
                     <include name="walletScreenTestsCheckSendCurrencyEnterInvalidAddressAndAndValidAmountClickSend"/>
                     <include name="walletScreenTestsCheckSendCurrencyEnterValidAddressAndInvalidAmountAndClickSend"/>
+                </methods>
+            </class>
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesReceive">
+                <methods>
+                    <include name="walletScreenTestsReceiveCheckHomeButton"/>
+                    <include name="walletScreenTestsReceiveCheckCopiedPublicAddress"/>
+                </methods>
+            </class>
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesBuy">
+                <methods>
+                    <include name="walletScreenTestsBuyCheckPoweredByONMETA"/>
                 </methods>
             </class>
         </classes>
