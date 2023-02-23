@@ -14,7 +14,7 @@ public class walletScreenLocators extends BaseClass {
         return walletScreenReceiveButton;
     }
     public WebElement walletScreenBuyButton(){
-        WebElement walletScreenBuyButton =  driver.findElement(By.xpath("//*[@text=' Buy']"));
+        WebElement walletScreenBuyButton =  driver.findElement(By.xpath("//*[@text='Buy']"));
         return walletScreenBuyButton;
     }
     public WebElement searchCurrencyTextField() {
@@ -84,6 +84,10 @@ public class walletScreenLocators extends BaseClass {
     public WebElement powerByOnmetaText(){
         WebElement powerByOnmetaText =  driver.findElement(By.xpath("//*[@text='onmeta logo']"));
         return powerByOnmetaText;
+    }
+    public WebElement accountIcon(){
+        WebElement accountIcon =  driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.widget.ImageView"));
+        return accountIcon;
     }
 
 }
