@@ -1,19 +1,11 @@
 package AnCrypto;
 import AnCrypto.Common.createNewWalletClass;
 import AnCrypto.Helpers.BaseClass;
-import AnCrypto.PageObjects.createNewWalletScreenLocators;
-import AnCrypto.PageObjects.onboardingScreenLocators;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
-import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
+
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.concurrent.TimeUnit;
 
 public class CreateNewWallet extends BaseClass {
