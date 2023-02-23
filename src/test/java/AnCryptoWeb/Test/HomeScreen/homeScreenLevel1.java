@@ -198,4 +198,11 @@ public class homeScreenLevel1 extends BaseClass {
         String a = hs.secondHalfFirstText().getText(), b= "Send Crypto Money While You Chat";
         Assert.assertEquals(a,b);
     }
+    @Test
+    void CheckSecondHalfLeftSubText(){
+        for (int i = 1;i<=3;i++) {
+            hs.SecondHalfLeftSubText(i).getText();
+        }
+    }
+
 }

@@ -12,7 +12,6 @@ import java.awt.*;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.Random;
 
 public class createNewWalletClass extends BaseClass {

@@ -95,4 +95,9 @@ public class homeScreenLocators extends BaseClass {
         WebElement a = driver.findElement(By.xpath("//h3[text()=\"Send Crypto Money While You Chat\"]"));
         return  a;
     }
+
+    public WebElement SecondHalfLeftSubText(int i){
+        WebElement a = driver.findElement(By.xpath("//ul[@class='crypto-list']/li["+i+"]"));
+        return a;
+    }
 }
