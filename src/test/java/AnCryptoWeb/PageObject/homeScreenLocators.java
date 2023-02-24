@@ -4,6 +4,8 @@ import AnCryptoWeb.Helper.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import java.util.List;
+
 public class homeScreenLocators extends BaseClass {
 
     public WebElement media() {
@@ -91,13 +93,68 @@ public class homeScreenLocators extends BaseClass {
         return fifthAppStoreButton;
     }
 
-    public WebElement secondHalfFirstText(){
-        WebElement a = driver.findElement(By.xpath("//h3[text()=\"Send Crypto Money While You Chat\"]"));
-        return  a;
+    public WebElement secondHalfFirstText() {
+        WebElement a = driver.findElement(By.xpath("//h3[text()='Send Crypto Money While You Chat']"));
+        return a;
     }
 
-    public WebElement SecondHalfLeftSubText(int i){
-        WebElement a = driver.findElement(By.xpath("//ul[@class='crypto-list']/li["+i+"]"));
+    public WebElement secondHalfLeftSubText(int i) {
+        WebElement a = driver.findElement(By.xpath("//ul[@class='crypto-list']/li[" + i + "]"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationChatText() {
+        WebElement a = driver.findElement(By.xpath("//h5[@class='et_pb_toggle_title' and text()='Chat']"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationQRCodeText() {
+        WebElement a = driver.findElement(By.xpath("//h5[@class='et_pb_toggle_title' and text()='QR-Code']"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationWalletAddressText() {
+        WebElement a = driver.findElement(By.xpath("//h5[@class='et_pb_toggle_title' and text()='Wallet Address']"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationChatSubTextHeading() {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Send Crypto Money While You Chat']"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationChatSubText(int i) {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Send Crypto Money While You Chat']/following-sibling::ul/li[" + i + "]"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationQRCodeSubTextHeading() {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Scan the QR-code and send money']"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationQRCodeSubText(int i) {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Scan the QR-code and send money']/following-sibling::ul/li[" + i + "]"));
+        return a;
+    }
+
+    public  List<WebElement> secondHalfRightAnimationQRCodeSubTextList() {
+        List<WebElement> a = driver.findElement(By.xpath("//p[text()='Scan the QR-code and send money']/following-sibling::ul"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationWalletAddressSubTextHeading() {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Send Crypto using wallet address']"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationWalletAddressSubText(int i) {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Send Crypto using wallet address']/following-sibling::ul/li[" + i + "]"));
+        return a;
+    }
+
+    public WebElement secondHalfRightAnimationWalletAddressSubTextList(int i) {
+        WebElement a = driver.findElement(By.xpath("//p[text()='Send Crypto using wallet address']/following-sibling::ul"));
         return a;
     }
 }
