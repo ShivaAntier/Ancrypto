@@ -14,17 +14,17 @@
                     <include name="walletScreenTestsCheckSendCurrencyEnterValidAddressAndInvalidAmountAndClickSend"/>
                 </methods>
             </class>
-<!--            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesReceive">-->
-<!--                <methods>-->
-<!--                    <include name="walletScreenTestsReceiveCheckHomeButton"/>-->
-<!--                    <include name="walletScreenTestsReceiveCheckCopiedPublicAddress"/>-->
-<!--                </methods>-->
-<!--            </class>-->
-<!--            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesBuy">-->
-<!--                <methods>-->
-<!--                    <include name="walletScreenTestsBuyCheckPoweredByONMETA"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesReceive">
+                <methods>
+                    <include name="walletScreenTestsReceiveCheckHomeButton"/>
+                    <include name="walletScreenTestsReceiveCheckCopiedPublicAddress"/>
+                </methods>
+            </class>
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesBuy">
+                <methods>
+                    <include name="walletScreenTestsBuyCheckPoweredByONMETA"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
