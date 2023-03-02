@@ -1,6 +1,9 @@
 package AnCrypto.Helpers;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -18,6 +21,7 @@ public class BaseClass {
     //    @Test
     public void openApp() throws MalformedURLException, InterruptedException {
         BaseClass bc = new BaseClass();
+
         cap = new DesiredCapabilities();
         cap.setCapability("automationName", "Appium");
 //        cap.setCapability("automationName", "Appium");
@@ -32,7 +36,6 @@ public class BaseClass {
 //        cap.setCapability("appActivity","com.coincult.MainActivity");
         cap.setCapability("autoGrantPermissions", "true");
         cap.setCapability("autoAcceptAlerts", "true");
-
         driver = new AppiumDriver(new URL("http://localhost:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Thread.sleep(2000);
