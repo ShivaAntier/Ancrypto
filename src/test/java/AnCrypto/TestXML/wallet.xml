@@ -25,6 +25,11 @@
                     <include name="walletScreenTestsBuyCheckPoweredByONMETA"/>
                 </methods>
             </class>
+            <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesAssets">
+                <methods>
+                    <include name="walletScreenTestCasesAssetsClickOnAvailableCurrencies"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
