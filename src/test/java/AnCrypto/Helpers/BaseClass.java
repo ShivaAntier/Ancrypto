@@ -1,6 +1,9 @@
 package AnCrypto.Helpers;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+import io.appium.java_client.service.local.flags.GeneralServerFlag;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
@@ -18,6 +21,7 @@ public class BaseClass {
     //    @Test
     public void openApp() throws MalformedURLException, InterruptedException {
         BaseClass bc = new BaseClass();
+
         cap = new DesiredCapabilities();
         cap.setCapability("automationName", "Appium");
         cap.setCapability("VERSION", "12.0");
@@ -29,11 +33,29 @@ public class BaseClass {
         cap.setCapability("noReset","true");
         cap.setCapability("autoGrantPermissions", "true");
         cap.setCapability("autoAcceptAlerts", "true");
-
         driver = new AppiumDriver(new URL("http://localhost:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         Thread.sleep(2000);
-        System.out.println("application started");
+//        System.out.println("application started");
+        // END OF CODE
+    }
+    public void openAppWithRest() throws MalformedURLException, InterruptedException {
+        BaseClass bc = new BaseClass();
+
+        cap = new DesiredCapabilities();
+        cap.setCapability("automationName", "Appium");
+        cap.setCapability("VERSION", "12.0");
+        cap.setCapability("deviceName", "realme RMX3381");//moto e(7) plus  Android SDK built for x86 N7I7UCAUOZ5T499P
+        cap.setCapability("platformName", "Android");
+        cap.setCapability("adbExecTimeout", "80000");
+        cap.setCapability("appPackage", "com.ancryptoWallet");
+        cap.setCapability("appActivity", "com.ancrypto.MainActivity");
+        cap.setCapability("autoGrantPermissions", "true");
+        cap.setCapability("autoAcceptAlerts", "true");
+        driver = new AppiumDriver(new URL("http://localhost:4723/wd/hub"), cap);
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        Thread.sleep(2000);
+//        System.out.println("application started");
         // END OF CODE
     }
 }

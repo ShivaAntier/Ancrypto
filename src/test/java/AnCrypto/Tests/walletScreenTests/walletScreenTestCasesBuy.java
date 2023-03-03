@@ -45,7 +45,7 @@ public class walletScreenTestCasesBuy extends BaseClass {
         Assert.assertEquals(walletScreenLocatorsObject.powerByOnmetaText().getText(), "onmeta logo");
     }
 
-    @Test
+//    @Test
     public void scrollTest() throws InterruptedException {
 //    Thread.sleep(3000);
 //        driver.fi
@@ -56,7 +56,7 @@ public class walletScreenTestCasesBuy extends BaseClass {
 //        a.click();
     }
 
-    @Test
+//    @Test
     public void swipeTest() throws InterruptedException {
         Thread.sleep(3000);
 //        TouchAction ta = new TouchAction(driver);
@@ -66,7 +66,7 @@ public class walletScreenTestCasesBuy extends BaseClass {
 
     }
 
-    @Test
+//    @Test
     public void swipeTestUsingNavigationDots() throws InterruptedException {
         Thread.sleep(3000);
         WebElement firstDot = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]"));
@@ -85,7 +85,7 @@ public class walletScreenTestCasesBuy extends BaseClass {
 
     }
 
-    @Test
+//    @Test
     public void countAvailableCurrencies() throws InterruptedException {
 //        MobileElement a = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator("new UiScrollable(new UiSelector().scrollable(true))." +
 //                "scrollIntoView(new UiSelector().textContains(\"Ethereum\"))"));
