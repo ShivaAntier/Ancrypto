@@ -1,29 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 18, Failures: 1, Errors: 0, Skipped: 17, Time elapsed: 21.224 s <<< FAILURE! - in TestSuite
-testSetup(AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend)  Time elapsed: 21.012 s  <<< FAILURE!
-org.openqa.selenium.SessionNotCreatedException: 
-Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20146ms.
+Tests run: 18, Failures: 1, Errors: 0, Skipped: 17, Time elapsed: 1.463 s <<< FAILURE! - in TestSuite
+testSetup(AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend)  Time elapsed: 1.322 s  <<< FAILURE!
+org.openqa.selenium.WebDriverException: 
+Connection refused: connect
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-0OFTRJ2', ip: '172.15.15.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: driver.version: AppiumDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20146ms.
-    at getResponseForW3CError (C:\Program Files\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Program Files\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-0OFTRJ2', ip: '172.15.15.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+System info: host: 'SHIVA-ATR632', ip: '172.15.14.83', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.16.1'
 Driver info: driver.version: AppiumDriver
 	at AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend.testSetup(walletScreenTestCasesSend.java:15)
-Caused by: java.lang.reflect.InvocationTargetException
-	at AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend.testSetup(walletScreenTestCasesSend.java:15)
-Caused by: org.openqa.selenium.WebDriverException: 
-An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20146ms.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-0OFTRJ2', ip: '172.15.15.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: driver.version: AppiumDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Could not find a connected Android device in 20146ms.
-    at getResponseForW3CError (C:\Program Files\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\errors.js:804:9)
-    at asyncHandler (C:\Program Files\Appium Server GUI\resources\app\node_modules\appium\node_modules\appium-base-driver\lib\protocol\protocol.js:380:37)
+Caused by: java.net.ConnectException: Connection refused: connect
 	at AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend.testSetup(walletScreenTestCasesSend.java:15)
 

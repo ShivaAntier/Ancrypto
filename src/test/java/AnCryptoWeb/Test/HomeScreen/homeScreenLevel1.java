@@ -228,5 +228,30 @@ public class homeScreenLevel1 extends BaseClass {
             }
         }
     }
+    @Test
+    void secondHalfRightAnimationChatText() throws InterruptedException {
+        Thread.sleep(5000);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", hs.secondHalfRightAnimationChatText());
+        String a = hs.secondHalfRightAnimationChatText().getText(), b= "Chat";
+        Assert.assertEquals(a,b);
+    }
+
+    @Test
+    void secondHalfRightAnimationQRCodeText() throws InterruptedException {
+        Thread.sleep(5000);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", hs.secondHalfRightAnimationQRCodeText());
+        String a = hs.secondHalfRightAnimationQRCodeText().getText(), b = "QR-Code";
+        Assert.assertEquals(a, b);
+    }
+
+    @Test
+    void secondHalfRightAnimationWalletAddressText() throws InterruptedException {
+        Thread.sleep(5000);
+        ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,200)");
+        Thread.sleep(2000);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", hs.secondHalfRightAnimationWalletAddressText());
+        String a = hs.secondHalfRightAnimationWalletAddressText().getText(), b = "Wallet Address";
+        Assert.assertEquals(a, b);
+    }
 
 }

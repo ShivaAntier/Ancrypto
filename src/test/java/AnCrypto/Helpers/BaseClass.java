@@ -20,7 +20,6 @@ public class BaseClass {
         BaseClass bc = new BaseClass();
         cap = new DesiredCapabilities();
         cap.setCapability("automationName", "Appium");
-//        cap.setCapability("automationName", "Appium");
         cap.setCapability("VERSION", "12.0");
         cap.setCapability("deviceName", "realme RMX3381");//moto e(7) plus  Android SDK built for x86 N7I7UCAUOZ5T499P
         cap.setCapability("platformName", "Android");
@@ -28,8 +27,6 @@ public class BaseClass {
         cap.setCapability("appPackage", "com.ancryptoWallet");
         cap.setCapability("appActivity", "com.ancrypto.MainActivity");
         cap.setCapability("noReset","true");
-//        cap.setCapability("appPackage","com.evoeurope");
-//        cap.setCapability("appActivity","com.coincult.MainActivity");
         cap.setCapability("autoGrantPermissions", "true");
         cap.setCapability("autoAcceptAlerts", "true");
 

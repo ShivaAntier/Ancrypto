@@ -157,4 +157,8 @@ public class homeScreenLocators extends BaseClass {
         WebElement a = driver.findElement(By.xpath("//p[text()='Send Crypto using wallet address']/following-sibling::ul"));
         return a;
     }
+    public WebElement secondHalfBannerHeadingText(){
+        WebElement a = driver.findElement(By.xpath("//h3[text()='Swap Crypto']"));
+        return a;
+    }
 }
