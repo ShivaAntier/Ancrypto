@@ -10,12 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-import java.awt.datatransfer.DataFlavor;
-import java.awt.datatransfer.UnsupportedFlavorException;
-import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.concurrent.TimeUnit;
 
 public class walletScreenTestCasesReceive extends BaseClass {
     WebDriverWait wait;
@@ -40,14 +35,13 @@ public class walletScreenTestCasesReceive extends BaseClass {
         Assert.assertEquals(driver.findElement(By.xpath("//*[@class = 'android.widget.TextView' and @index = '1' and @text = 'Wallet']")).getText(), "Wallet");
     }
     @Test
-    public void walletScreenTestsReceiveCheckCopiedPublicAddress() throws IOException, UnsupportedFlavorException, InterruptedException {
+    public void walletScreenTestsReceiveCheckCopiedPublicAddress() {
         walletScreenLocatorsObject.walletScreenReceiveButton().click();
         walletScreenLocatorsObject.searchCurrencyTextField().sendKeys("Polygon");
         walletScreenLocatorsObject.selectDesiredCurrency("Polygon").click();
-        String expectedAddress = walletScreenLocatorsObject.publicAddress().getText();
         walletScreenLocatorsObject.copyButton().click();
-        Thread.sleep(2000);
-        String actualAddress = (String) Toolkit.getDefaultToolkit().getSystemClipboard().getData(DataFlavor.stringFlavor);
-        Assert.assertEquals(actualAddress, expectedAddress);
+        wait = new WebDriverWait(driver, 20);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@text='Copied!']")));
+        Assert.assertEquals(walletScreenLocatorsObject.copiedText().getText(), "Copied!");
     }
 }

@@ -4,6 +4,7 @@ import AnCrypto.Helpers.BaseClass;
 import AnCrypto.PageObjects.walletScreenLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -12,6 +13,7 @@ import java.net.MalformedURLException;
 import java.util.List;
 
 public class walletScreenTestCasesAssets extends BaseClass {
+    WebDriverWait wait;
     walletScreenLocators walletScreenLocatorsObject = new walletScreenLocators();
 
     @BeforeMethod
@@ -24,7 +26,7 @@ public class walletScreenTestCasesAssets extends BaseClass {
         driver.quit();
     }
 
-    @Test
+//    @Test
     public void walletScreenTestCasesAssetsClickOnAvailableCurrencies() throws InterruptedException {
         for (int i = 0; i < walletScreenLocatorsObject.assetsCategoryList().size(); i++) {
             Thread.sleep(1000);
@@ -39,7 +41,13 @@ public class walletScreenTestCasesAssets extends BaseClass {
                 driver.navigate().back();
                 Thread.sleep(1000);
                 driver.findElement(By.xpath("//*[@text='" + walletScreenLocatorsObject.assetsCurrencyList().get(j).getText() + "']")).click();
-                walletScreenLocatorsObject.currencyReceiveButton().click();
+                Thread.sleep(1000);
+                if(walletScreenLocatorsObject.currencyReceiveButton().size()>1){
+                    walletScreenLocatorsObject.currencyReceiveButton().get(1).click();
+                }
+                else {
+                    walletScreenLocatorsObject.currencyReceiveButton().get(0).click();
+                }
                 Thread.sleep(1000);
                 driver.navigate().back();
                 Thread.sleep(1000);

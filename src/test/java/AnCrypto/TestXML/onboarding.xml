@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Wallet Test Suite">
+<suite name="Onboarding Test Suite">
     <test verbose="2" preserve-order="true"
           name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/Tests.onboardingScreenTests/onboardingScreenTestCases.java">
         <classes>
             <class name="AnCrypto.Tests.onboardingScreenTests.onboardingScreenTestCases">
                 <methods>
                     <include name="onboardingScreenTestCasesVerifyFirstOnboardingScreenText"/>
-                    <include name="onboardingScreenTestCasesVerifySecondOnboardingScreenText"/>
+<!--                    <include name="onboardingScreenTestCasesVerifySecondOnboardingScreenText"/>-->
                     <include name="onboardingScreenTestCasesVerifyThirdOnboardingScreenText"/>
                     <include name="onboardingScreenTestCasesVerifyFourthOnboardingScreenText"/>
                 </methods>

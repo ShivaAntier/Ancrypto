@@ -99,9 +99,12 @@ public class walletScreenLocators extends BaseClass {
         List<WebElement> assetsCurrencyList = driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]"));
         return assetsCurrencyList;
     }
-
-    public WebElement  currencyReceiveButton(){
-        WebElement currencyReceiveButton = driver.findElement(By.xpath("//*[@index='1' and @class = 'android.view.ViewGroup']/android.view.ViewGroup[5]//*[@class='android.widget.TextView' and @text='Receive']"));
+    public List<WebElement>  currencyReceiveButton(){
+        List<WebElement> currencyReceiveButton = driver.findElements(By.xpath("//*[@text='Receive']"));
         return currencyReceiveButton;
+    }
+    public WebElement copiedText(){
+        WebElement copiedText =  driver.findElement(By.xpath("//*[@text='Copied!']"));
+        return copiedText;
     }
 }

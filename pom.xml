@@ -68,8 +68,7 @@
           <configuration>
             <suiteXmlFiles>
               <!-- TestNG suite XML files -->
-              <suiteXmlFile>onboarding.xml</suiteXmlFile>
-              <suiteXmlFile>wallet.xml</suiteXmlFile>
+              <suiteXmlFile>Test.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
         </plugin>
