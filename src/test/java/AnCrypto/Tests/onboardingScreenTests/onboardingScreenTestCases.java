@@ -45,7 +45,7 @@ public class onboardingScreenTestCases extends BaseClass {
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.plusIcon().click();
         Thread.sleep(500);
-        TouchAction swipeRight = new TouchAction(driver).press(PointOption.point(900, 900)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(200, 900)).release();
+        TouchAction swipeRight = new TouchAction(driver).press(PointOption.point(1000, 1000)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(200, 1000)).release();
         swipeRight.perform();
         String headerText = onboardingScreenLocatorsObject.onboardingScreenTwoHeaderUpperText().getText() + " " + onboardingScreenLocatorsObject.onboardingScreenTwoHeaderLowerText().getText();
         String subText = onboardingScreenLocatorsObject.onboardingScreenTwoSubUpperText().getText() + " " + onboardingScreenLocatorsObject.onboardingScreenTwoSubLowerText().getText();
@@ -58,9 +58,9 @@ public class onboardingScreenTestCases extends BaseClass {
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.plusIcon().click();
         Thread.sleep(500);
-        TouchAction swipeRightFirst = new TouchAction(driver).press(PointOption.point(900, 900)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(200, 900)).release();
+        TouchAction swipeRightFirst = new TouchAction(driver).press(PointOption.point(1000, 1000)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(200, 1000)).release();
         swipeRightFirst.perform();
-        TouchAction swipeRightSecond = new TouchAction(driver).press(PointOption.point(900, 900)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(200, 900)).release();
+        TouchAction swipeRightSecond = new TouchAction(driver).press(PointOption.point(1000, 1000)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(200, 1000)).release();
         swipeRightSecond.perform();
         String headerText = onboardingScreenLocatorsObject.onboardingScreenThreeHeaderUpperText().getText() + " " + onboardingScreenLocatorsObject.onboardingScreenThreeHeaderLowerText().getText();
         String subText = onboardingScreenLocatorsObject.onboardingScreenThreeSubUpperText().getText() + " " + onboardingScreenLocatorsObject.onboardingScreenThreeSubLowerText().getText();
@@ -73,11 +73,11 @@ public class onboardingScreenTestCases extends BaseClass {
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.plusIcon().click();
         Thread.sleep(500);
-        TouchAction swipeRightFirst = new TouchAction(driver).press(PointOption.point(900, 900)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(200, 900)).release();
+        TouchAction swipeRightFirst = new TouchAction(driver).press(PointOption.point(1000, 1000)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(200, 1000)).release();
         swipeRightFirst.perform();
-        TouchAction swipeRightSecond = new TouchAction(driver).press(PointOption.point(900, 900)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(200, 900)).release();
+        TouchAction swipeRightSecond = new TouchAction(driver).press(PointOption.point(1000, 1000)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(200, 1000)).release();
         swipeRightSecond.perform();
-        TouchAction swipeRightThird = new TouchAction(driver).press(PointOption.point(900, 900)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(1000))).moveTo(PointOption.point(200, 900)).release();
+        TouchAction swipeRightThird = new TouchAction(driver).press(PointOption.point(1000, 1000)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(2000))).moveTo(PointOption.point(200, 1000)).release();
         swipeRightThird.perform();
         String headerText = onboardingScreenLocatorsObject.onboardingScreenFourthHeaderUpperText().getText() + " " + onboardingScreenLocatorsObject.onboardingScreenFourthHeaderLowerText().getText();
         String subText = onboardingScreenLocatorsObject.onboardingScreenFourthSubUpperText().getText() + " " + onboardingScreenLocatorsObject.onboardingScreenFourthSubLowerText().getText();
