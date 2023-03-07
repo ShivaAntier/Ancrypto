@@ -1,0 +1,17 @@
+To launch the emulator :
+--> enter the directory where the emulator is present
+("cd %ANDROID_HOME%/emulator")
+--> then run below command to launch emulator
+("emulator -avd 'Name of device'")
+--> For user emulator headless you can use "-no-window" after the above command
+
+--> To install apk from cmd
+("adb install 'Path of the apk.'")
+
+--> TO open cmd with java code we can execute code as :
+Runtime.getRuntime().exec("cmd /c start");
+
+--> Run Emulator with code
+Runtime.getRuntime().exec("cmd /c start cmd.exe /K emulator -avd 'Name of device'", null, new File("Path of emulator"));
+
+
