@@ -67,4 +67,31 @@ public class walletScreenTestCasesAssets extends BaseClass {
             }
         }
     }
+    @Test
+    public void walletScreenTestCasesClickOnNameFilter(){
+        walletScreenLocatorsObject.nameText().click();
+    }
+    @Test
+    public void walletScreenTestCasesClickOnNameFilterTwice(){
+        walletScreenLocatorsObject.nameText().click();
+        walletScreenLocatorsObject.nameText().click();
+    }
+    @Test
+    public void walletScreenTestCasesClickOn24hChangeFilter(){
+        walletScreenLocatorsObject.twentyFourHourChangeText().click();
+    }
+    @Test
+    public void walletScreenTestCasesClickOn24hChangeFilterTwice(){
+        walletScreenLocatorsObject.twentyFourHourChangeText().click();
+        walletScreenLocatorsObject.twentyFourHourChangeText().click();
+    }
+    @Test
+    public void walletScreenTestCasesClickOnHoldingsFilter(){
+        walletScreenLocatorsObject.holdingsText().click();
+    }
+    @Test
+    public void walletScreenTestCasesClickOnHoldingsFilterTwice(){
+        walletScreenLocatorsObject.holdingsText().click();
+        walletScreenLocatorsObject.holdingsText().click();
+    }
 }

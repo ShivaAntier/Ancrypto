@@ -17,8 +17,6 @@ import java.util.concurrent.TimeUnit;
 public class BaseClass {
     public static AppiumDriver driver;
     public static DesiredCapabilities cap;
-    public static Process p;
-    public static Process q;
     public String key = "wide truly test valley bike accident law gentle dinosaur mind jar budget";
     public String walletName = "tester";
     String userName = "tester_001";
@@ -52,20 +50,11 @@ public class BaseClass {
     static AppiumDriverLocalService appium = builder.build();
     //        System.out.println("Starting the Appium Server on 127.0.0.1:4723");
 
-
-    public static void startEmulator() throws IOException {
-        p = Runtime.getRuntime().exec("cmd /c start cmd.exe /K emulator -avd Pixel4", null, new File("C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\emulator"));
-
-    }
-    public static void stopEmulator() throws IOException {
-        q = Runtime.getRuntime().exec("cmd /c start cmd.exe /K adb -s emulator-5554 emu kill", null, new File("C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\emulator"));
-
-    }
     @BeforeSuite
     public void start() throws IOException, InterruptedException {
         System.out.println("Before Suite");
         Thread.sleep(5000);
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K emulator -avd Pixel4", null, new File("C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\emulator"));
+//        Process p = Runtime.getRuntime().exec("cmd /c start cmd.exe /K emulator -avd Pixel4", null, new File("C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\emulator"));
         appium.start();
     }
 
@@ -73,7 +62,7 @@ public class BaseClass {
     public void stopServer() throws IOException, InterruptedException {
         System.out.println("After Suite");
         Thread.sleep(5000);
-        Runtime.getRuntime().exec("cmd /c start cmd.exe /K adb -s emulator-5554 emu kill", null, new File("C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\emulator"));
+//        Process q = Runtime.getRuntime().exec("cmd /c start cmd.exe /K adb -s emulator-5554 emu kill", null, new File("C:\\Users\\user\\AppData\\Local\\Android\\Sdk\\emulator"));
         appium.stop();
     }
 }

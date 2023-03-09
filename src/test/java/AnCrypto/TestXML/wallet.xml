@@ -28,6 +28,12 @@
             <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesAssets">
                 <methods>
 <!--                    <include name="walletScreenTestCasesAssetsClickOnAvailableCurrencies"/>-->
+                    <include name="walletScreenTestCasesClickOnNameFilter"/>
+                    <include name="walletScreenTestCasesClickOnNameFilterTwice"/>
+                    <include name="walletScreenTestCasesClickOn24hChangeFilter"/>
+                    <include name="walletScreenTestCasesClickOn24hChangeFilterTwice"/>
+                    <include name="walletScreenTestCasesClickOnHoldingsFilter"/>
+                    <include name="walletScreenTestCasesClickOnHoldingsFilterTwice"/>
                 </methods>
             </class>
         </classes>

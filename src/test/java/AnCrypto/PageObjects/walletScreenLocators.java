@@ -107,4 +107,16 @@ public class walletScreenLocators extends BaseClass {
         WebElement copiedText =  driver.findElement(By.xpath("//*[@text='Copied!']"));
         return copiedText;
     }
+    public WebElement nameText(){
+        WebElement nameText =  driver.findElement(By.xpath("//*[@text='Name']"));
+        return nameText;
+    }
+    public WebElement twentyFourHourChangeText(){
+        WebElement twentyFourHourChangeText =  driver.findElement(By.xpath("//*[@text='24h Change']"));
+        return twentyFourHourChangeText;
+    }
+    public WebElement holdingsText(){
+        WebElement holdingsText =  driver.findElement(By.xpath("//*[@text='Holdings']"));
+        return holdingsText;
+    }
 }
