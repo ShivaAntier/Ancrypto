@@ -50,7 +50,7 @@ public class BaseClass {
     static AppiumDriverLocalService appium = builder.build();
     //        System.out.println("Starting the Appium Server on 127.0.0.1:4723");
 
-    @BeforeSuite
+//    @BeforeSuite
     public void start() throws IOException, InterruptedException {
         System.out.println("Before Suite");
         Thread.sleep(5000);
@@ -58,7 +58,7 @@ public class BaseClass {
         appium.start();
     }
 
-    @AfterSuite
+//    @AfterSuite
     public void stopServer() throws IOException, InterruptedException {
         System.out.println("After Suite");
         Thread.sleep(5000);

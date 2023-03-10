@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Wallet Test Suite">
     <test verbose="2" preserve-order="true"
-          name="C:/Users/user/IdeaProjects/MobileTesting/src/test/java/AnCrypto/Tests.walletScreenTests/walletScreenTestCases.java">
+          name="Wallet Screen Tests">
         <classes>
             <class name="AnCrypto.Tests.walletScreenTests.walletScreenTestCasesSend">
                 <methods>

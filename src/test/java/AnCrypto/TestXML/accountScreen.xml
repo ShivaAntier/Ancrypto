@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Account Screen Test Suite">
+    <test verbose="1" name="Account Screen Tests">
+        <classes>
+            <class name="AnCrypto.Tests.accountScreenTests.accountScreenTestCases">
+                <methods>
+                    <include name="accountScreenTestCasesClickOnProfile"/>
+                    <include name="accountScreenTestCasesClickOnReferralAndRewards"/>
+                    <include name="accountScreenTestCasesClickOnSecurity"/>
+                    <include name="accountScreenTestCasesEnableOrDisablePushNotifications"/>
+                    <include name="accountScreenTestCasesClickOnChangeCurrency"/>
+                    <include name="accountScreenTestCasesChangeCurrency"/>
+                    <include name="accountScreenTestCasesClickOnSupportCenter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" name="Profile Screen Tests">
+        <classes>
+            <class name="AnCrypto.Tests.accountScreenTests.profileScreenTestCases">
+                <methods>
+                    <include name="profileScreenTestCasesClickOnProfileSelectPublicClickOnSave"/>
+                    <include name="profileScreenTestCasesClickOnProfileSelectPrivateClickOnSave"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="3" name="Referral and Rewards Screen Tests">
+        <classes>
+            <class name="AnCrypto.Tests.accountScreenTests.referralAndRewardsScreenTestCases">
+                <methods>
+                    <include name="referralAndRewardsScreenTestCasesClickOnInviteFriendsAndEarnAncryptoTextAndVerifyShareMenu"/>
+                    <include name="referralAndRewardsScreenTestCasesClickOnCopyReferralCodeButton"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="4" name="Security Screen Tests">
+        <classes>
+            <class name="AnCrypto.Tests.accountScreenTests.securityScreenTestCases">
+                <methods>
+                    <include name="securityScreenTestCasesTurnOnAndOffAppLock"/>
+                    <include name="securityScreenTestCasesChangePasscode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
