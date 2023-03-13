@@ -59,28 +59,23 @@ public class manageWalletScreenTestCases extends BaseClass {
         manageWalletScreenLocatorsObject.showHideIcon().click();
         Thread.sleep(2000);
     }
-//    @Test
-    public void manageWalletScreenTestCasesSwitchWallet() throws InterruptedException {
+    @Test
+    public void manageWalletScreenTestCasesClickOnEveryWalletAvailableOnManageWalletScreen() {
         String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
-            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equals(activeWalletName)){
-                continue;
-            }
-            else{
+            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(activeWalletName)){
                 manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).click();
             }
+            else{
+                String clickedWalletName = manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText();
+                manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).click();
+                Assert.assertEquals(clickedWalletName, walletScreenLocatorsObject.activeWalletName().getText());
+                walletScreenLocatorsObject.accountIcon().click();
+                accountScreenLocatorsObject.manageWalletButton().click();
+            }
         }
-
-        if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().size()>1){
-            manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(3).click();
-            Thread.sleep(2000);
-        }
-        else{
-            System.out.println("Only 1 wallet available therefore cannot switch wallets.");
-        }
-        Thread.sleep(2000);
     }
     @Test
     public void manageWalletScreenTestCasesManageWalletSettingsEditWalletName() throws InterruptedException {
