@@ -2,6 +2,8 @@ package AnCrypto.Tests.manageWalletScreenTests;
 
 import AnCrypto.Helpers.BaseClass;
 import AnCrypto.PageObjects.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -15,13 +17,8 @@ public class manageWalletScreenTestCases extends BaseClass {
     WebDriverWait wait;
     accountScreenLocators accountScreenLocatorsObject = new accountScreenLocators();
     walletScreenLocators walletScreenLocatorsObject = new walletScreenLocators();
-    profileScreenLocators profileScreenLocatorsObject = new profileScreenLocators();
-    rewardsScreenLocators rewardsScreenLocatorsObject = new rewardsScreenLocators();
-    securityScreenLocators securityScreenLocatorsObject = new securityScreenLocators();
-    currencyPreferenceLocators currencyPreferenceLocatorsObject = new currencyPreferenceLocators();
+    createNewWalletScreenLocators createNewWalletScreenLocatorsObject = new createNewWalletScreenLocators();
     manageWalletScreenLocators manageWalletScreenLocatorsObject = new manageWalletScreenLocators();
-    contactsScreenLocators contactsScreenLocatorsObject = new contactsScreenLocators();
-    blockedUsersScreenLocators blockedUsersScreenLocatorsObject = new blockedUsersScreenLocators();
     String walletName;
     public String getSaltString() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
@@ -94,6 +91,7 @@ public class manageWalletScreenTestCases extends BaseClass {
     }
     @Test
     public void manageWalletScreenTestCasesManageWalletSettingsClickOnShowRecoveryPhaseAndCopyMnemonics() throws InterruptedException {
+        wait = new WebDriverWait(driver, 5);
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.walletInfoIcon().click();
@@ -101,7 +99,8 @@ public class manageWalletScreenTestCases extends BaseClass {
         for (int i = 1; i < 5; i++) {
             manageWalletScreenLocatorsObject.pinDigitValueText("1").click();
         }
-
-        Assert.assertTrue(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(0).getText().equalsIgnoreCase(walletName));
+        createNewWalletScreenLocatorsObject.copyButton().click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@text='Copied!']")));
+        Assert.assertEquals(manageWalletScreenLocatorsObject.copiedText().getText(), "Copied!");
     }
 }

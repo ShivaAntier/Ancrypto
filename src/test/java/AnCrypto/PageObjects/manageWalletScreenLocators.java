@@ -51,5 +51,9 @@ public class manageWalletScreenLocators extends BaseClass {
         WebElement pinDigitValueText = driver.findElement(By.xpath("//*[@text='"+value+"']"));
         return pinDigitValueText;
     }
+    public WebElement copiedText(){
+        WebElement copiedText = driver.findElement(By.xpath("//*[@text='Copied!']"));
+        return copiedText;
+    }
 
 }
