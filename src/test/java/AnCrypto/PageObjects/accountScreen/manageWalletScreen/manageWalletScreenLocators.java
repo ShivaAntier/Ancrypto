@@ -31,8 +31,8 @@ public class manageWalletScreenLocators extends BaseClass {
         List<WebElement> namesOfAvailableWallets = driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView[1]"));
         return namesOfAvailableWallets;
     }
-    public WebElement walletInfoIcon(){
-        WebElement walletInfoIcon = driver.findElement(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView"));
+    public List<WebElement> walletInfoIcon(){
+        List<WebElement> walletInfoIcon = driver.findElements(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[3]/android.view.ViewGroup/android.widget.ImageView"));
         return walletInfoIcon;
     }
     public WebElement editWalletNameTextField(){
@@ -54,6 +54,18 @@ public class manageWalletScreenLocators extends BaseClass {
     public WebElement copiedText(){
         WebElement copiedText = driver.findElement(By.xpath("//*[@text='Copied!']"));
         return copiedText;
+    }
+    public WebElement deleteWalletButton(){
+        WebElement copiedText = driver.findElement(By.xpath("//*[@text='Delete Wallet']"));
+        return copiedText;
+    }
+    public WebElement yesButton(){
+        WebElement copiedText = driver.findElement(By.xpath("//*[@text='Yes']"));
+        return copiedText;
+    }
+    public WebElement youCannotDeleteDefaultWalletPopupText(){
+        WebElement youCannotDeleteDefaultWalletPopupText = driver.findElement(By.xpath("//*[@text='You cannot delete default wallet']"));
+        return youCannotDeleteDefaultWalletPopupText;
     }
 
 }

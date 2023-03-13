@@ -2,7 +2,13 @@ package AnCrypto.Tests.accountScreenTests;
 
 import AnCrypto.Helpers.BaseClass;
 import AnCrypto.PageObjects.*;
-import AnCrypto.PageObjects.accountScreen.*;
+import AnCrypto.PageObjects.accountScreen.accountScreenLocators;
+import AnCrypto.PageObjects.accountScreen.profileScreenLocators;
+import AnCrypto.PageObjects.accountScreen.rewardsScreenLocators;
+import AnCrypto.PageObjects.accountScreen.securityScreenLocators;
+import AnCrypto.PageObjects.accountScreen.currencyPreferenceLocators;
+import AnCrypto.PageObjects.accountScreen.contactsScreenLocators;
+import AnCrypto.PageObjects.accountScreen.blockedUsersScreenLocators;
 import AnCrypto.PageObjects.accountScreen.manageWalletScreen.manageWalletScreenLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;

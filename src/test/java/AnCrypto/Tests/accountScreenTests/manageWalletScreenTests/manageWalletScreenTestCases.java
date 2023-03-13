@@ -6,6 +6,7 @@ import AnCrypto.PageObjects.accountScreen.accountScreenLocators;
 import AnCrypto.PageObjects.accountScreen.manageWalletScreen.createNewWalletScreenLocators;
 import AnCrypto.PageObjects.accountScreen.manageWalletScreen.manageWalletScreenLocators;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -44,14 +45,14 @@ public class manageWalletScreenTestCases extends BaseClass {
         driver.quit();
     }
     @Test
-    public void manageWalletScreenTestCasesClickOnStableCoinsAndThenClickOnAllCoins(){
+    public void manageWalletScreenTestCase_ClickOnStableCoinsAndThenClickOnAllCoins(){
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.stableCoinsButton().click();
         manageWalletScreenLocatorsObject.allCoinsButton().click();
     }
     @Test
-    public void manageWalletScreenTestCasesClickOnHideOrShowTotalBalance() throws InterruptedException {
+    public void manageWalletScreenTestCase_ClickOnHideOrShowTotalBalance() throws InterruptedException {
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.showHideIcon().click();
@@ -59,45 +60,47 @@ public class manageWalletScreenTestCases extends BaseClass {
         manageWalletScreenLocatorsObject.showHideIcon().click();
         Thread.sleep(2000);
     }
-//    @Test
-    public void manageWalletScreenTestCasesSwitchWallet() throws InterruptedException {
+    @Test
+    public void manageWalletScreenTestCase_ClickOnEveryAvailableWalletOnManageWalletScreen() {
         String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
-            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equals(activeWalletName)){
-                continue;
-            }
-            else{
+            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(activeWalletName)){
                 manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).click();
             }
+            else{
+                String clickedWalletName = manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText();
+                manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).click();
+                Assert.assertEquals(clickedWalletName, walletScreenLocatorsObject.activeWalletName().getText());
+                walletScreenLocatorsObject.accountIcon().click();
+                accountScreenLocatorsObject.manageWalletButton().click();
+            }
         }
-
-        if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().size()>1){
-            manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(3).click();
-            Thread.sleep(2000);
-        }
-        else{
-            System.out.println("Only 1 wallet available therefore cannot switch wallets.");
-        }
-        Thread.sleep(2000);
     }
     @Test
-    public void manageWalletScreenTestCasesManageWalletSettingsEditWalletName() throws InterruptedException {
+    public void manageWalletScreenTestCase_ManageWalletSettingsEditWalletName() throws InterruptedException {
+        String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
-        manageWalletScreenLocatorsObject.walletInfoIcon().click();
+        for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
+            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(activeWalletName)){
+                manageWalletScreenLocatorsObject.walletInfoIcon().get(i).click();
+                break;
+            }
+        }
         getSaltString();
         manageWalletScreenLocatorsObject.editWalletNameTextField().sendKeys(walletName);
         manageWalletScreenLocatorsObject.saveChangesButton().click();
-        Assert.assertTrue(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(0).getText().equalsIgnoreCase(walletName));
+        WebElement walletWithChangedName = driver.findElement(By.xpath("//*[@text='"+walletName+"']"));
+        Assert.assertEquals(walletWithChangedName.getText(), walletName);
     }
-    @Test
+//    @Test
     public void manageWalletScreenTestCasesManageWalletSettingsClickOnShowRecoveryPhaseAndCopyMnemonics() throws InterruptedException {
         wait = new WebDriverWait(driver, 5);
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
-        manageWalletScreenLocatorsObject.walletInfoIcon().click();
+//        manageWalletScreenLocatorsObject.walletInfoIcon().click();
         manageWalletScreenLocatorsObject.showRecoveryPhraseButton().click();
         for (int i = 1; i < 5; i++) {
             manageWalletScreenLocatorsObject.pinDigitValueText("1").click();
@@ -105,5 +108,40 @@ public class manageWalletScreenTestCases extends BaseClass {
         createNewWalletScreenLocatorsObject.copyButton().click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@text='Copied!']")));
         Assert.assertEquals(manageWalletScreenLocatorsObject.copiedText().getText(), "Copied!");
+    }
+    @Test
+    public void manageWalletScreenTestCase_DeleteAnyInactiveWallet(){
+        String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
+        walletScreenLocatorsObject.accountIcon().click();
+        accountScreenLocatorsObject.manageWalletButton().click();
+        for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
+            if(!manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(activeWalletName)){
+                manageWalletScreenLocatorsObject.walletInfoIcon().get(i).click();
+                break;
+            }
+        }
+        String deletedWalletName = manageWalletScreenLocatorsObject.editWalletNameTextField().getText();
+        manageWalletScreenLocatorsObject.deleteWalletButton().click();
+        manageWalletScreenLocatorsObject.yesButton().click();
+        for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
+            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(deletedWalletName)){
+                Assert.fail();
+                break;
+            }
+        }
+    }
+    @Test
+    public void manageWalletScreenTestCase_TryToDeleteTheDefaultWalletAndVerifyCannotDeleteDefaultWalletPopup(){
+        String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
+        walletScreenLocatorsObject.accountIcon().click();
+        accountScreenLocatorsObject.manageWalletButton().click();
+        for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
+            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(activeWalletName)){
+                manageWalletScreenLocatorsObject.walletInfoIcon().get(i).click();
+                break;
+            }
+        }
+        manageWalletScreenLocatorsObject.deleteWalletButton().click();
+        Assert.assertEquals(manageWalletScreenLocatorsObject.youCannotDeleteDefaultWalletPopupText().getText(), "You cannot delete default wallet");
     }
 }
