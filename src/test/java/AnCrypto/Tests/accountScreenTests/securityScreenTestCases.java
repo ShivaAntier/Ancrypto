@@ -1,8 +1,8 @@
 package AnCrypto.Tests.accountScreenTests;
 
 import AnCrypto.Helpers.BaseClass;
-import AnCrypto.PageObjects.accountScreenLocators;
-import AnCrypto.PageObjects.securityScreenLocators;
+import AnCrypto.PageObjects.accountScreen.accountScreenLocators;
+import AnCrypto.PageObjects.accountScreen.securityScreenLocators;
 import AnCrypto.PageObjects.walletScreenLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;

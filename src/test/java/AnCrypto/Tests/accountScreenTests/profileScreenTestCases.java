@@ -1,8 +1,8 @@
 package AnCrypto.Tests.accountScreenTests;
 
 import AnCrypto.Helpers.BaseClass;
-import AnCrypto.PageObjects.accountScreenLocators;
-import AnCrypto.PageObjects.profileScreenLocators;
+import AnCrypto.PageObjects.accountScreen.accountScreenLocators;
+import AnCrypto.PageObjects.accountScreen.profileScreenLocators;
 import AnCrypto.PageObjects.walletScreenLocators;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;

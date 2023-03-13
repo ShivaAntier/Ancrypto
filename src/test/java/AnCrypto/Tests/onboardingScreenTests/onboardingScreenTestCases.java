@@ -1,9 +1,9 @@
 package AnCrypto.Tests.onboardingScreenTests;
 
 import AnCrypto.Helpers.BaseClass;
-import AnCrypto.PageObjects.accountScreenLocators;
-import AnCrypto.PageObjects.manageWalletScreenLocators;
-import AnCrypto.PageObjects.onboardingScreenLocators;
+import AnCrypto.PageObjects.accountScreen.accountScreenLocators;
+import AnCrypto.PageObjects.accountScreen.manageWalletScreen.manageWalletScreenLocators;
+import AnCrypto.PageObjects.accountScreen.manageWalletScreen.onboardingScreenLocators;
 import AnCrypto.PageObjects.walletScreenLocators;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.touch.WaitOptions;

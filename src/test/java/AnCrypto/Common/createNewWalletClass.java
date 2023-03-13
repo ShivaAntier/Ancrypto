@@ -1,8 +1,8 @@
 package AnCrypto.Common;
 
 import AnCrypto.Helpers.BaseClass;
-import AnCrypto.PageObjects.createNewWalletScreenLocators;
-import AnCrypto.PageObjects.onboardingScreenLocators;
+import AnCrypto.PageObjects.accountScreen.manageWalletScreen.createNewWalletScreenLocators;
+import AnCrypto.PageObjects.accountScreen.manageWalletScreen.onboardingScreenLocators;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
