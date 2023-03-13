@@ -45,14 +45,14 @@ public class manageWalletScreenTestCases extends BaseClass {
         driver.quit();
     }
     @Test
-    public void manageWalletScreenTestCasesClickOnStableCoinsAndThenClickOnAllCoins(){
+    public void manageWalletScreenTestCase_ClickOnStableCoinsAndThenClickOnAllCoins(){
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.stableCoinsButton().click();
         manageWalletScreenLocatorsObject.allCoinsButton().click();
     }
     @Test
-    public void manageWalletScreenTestCasesClickOnHideOrShowTotalBalance() throws InterruptedException {
+    public void manageWalletScreenTestCase_ClickOnHideOrShowTotalBalance() throws InterruptedException {
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
         manageWalletScreenLocatorsObject.showHideIcon().click();
@@ -79,7 +79,7 @@ public class manageWalletScreenTestCases extends BaseClass {
         }
     }
     @Test
-    public void manageWalletScreenTestCasesManageWalletSettingsEditWalletName() throws InterruptedException {
+    public void manageWalletScreenTestCase_ManageWalletSettingsEditWalletName() throws InterruptedException {
         String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
@@ -110,7 +110,7 @@ public class manageWalletScreenTestCases extends BaseClass {
         Assert.assertEquals(manageWalletScreenLocatorsObject.copiedText().getText(), "Copied!");
     }
     @Test
-    public void manageWalletScreenTestCase_deleteAnyInactiveWallet(){
+    public void manageWalletScreenTestCase_DeleteAnyInactiveWallet(){
         String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
         walletScreenLocatorsObject.accountIcon().click();
         accountScreenLocatorsObject.manageWalletButton().click();
@@ -129,5 +129,19 @@ public class manageWalletScreenTestCases extends BaseClass {
                 break;
             }
         }
+    }
+    @Test
+    public void manageWalletScreenTestCase_TryToDeleteTheDefaultWalletAndVerifyCannotDeleteDefaultWalletPopup(){
+        String activeWalletName = walletScreenLocatorsObject.activeWalletName().getText();
+        walletScreenLocatorsObject.accountIcon().click();
+        accountScreenLocatorsObject.manageWalletButton().click();
+        for(int i=0; i<manageWalletScreenLocatorsObject.namesOfAvailableWallets().size(); i++){
+            if(manageWalletScreenLocatorsObject.namesOfAvailableWallets().get(i).getText().equalsIgnoreCase(activeWalletName)){
+                manageWalletScreenLocatorsObject.walletInfoIcon().get(i).click();
+                break;
+            }
+        }
+        manageWalletScreenLocatorsObject.deleteWalletButton().click();
+        Assert.assertEquals(manageWalletScreenLocatorsObject.youCannotDeleteDefaultWalletPopupText().getText(), "You cannot delete default wallet");
     }
 }

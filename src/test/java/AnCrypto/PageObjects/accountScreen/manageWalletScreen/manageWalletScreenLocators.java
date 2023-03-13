@@ -63,5 +63,9 @@ public class manageWalletScreenLocators extends BaseClass {
         WebElement copiedText = driver.findElement(By.xpath("//*[@text='Yes']"));
         return copiedText;
     }
+    public WebElement youCannotDeleteDefaultWalletPopupText(){
+        WebElement youCannotDeleteDefaultWalletPopupText = driver.findElement(By.xpath("//*[@text='You cannot delete default wallet']"));
+        return youCannotDeleteDefaultWalletPopupText;
+    }
 
 }
